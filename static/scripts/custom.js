@@ -9,4 +9,21 @@ $(document).ready(function() {
     //                                                                             | |
     //                                                                             |_|
     $('#div-gpt-ad-4, .ad, #leaderboard-ad').remove();
+
+    var squareWidth = $('.hc-graphic-square').width();
+    $('.hc-graphic-square').css({'height': squareWidth + 'px'});
+
+    // var graphicHeight = ('.hc-graphic').height();
+    // $('.hc-graphic-col').css({'height': graphicHeight + 'px'});
+
+    var resizeTimer;
+
+    $(window).on('resize', function(e) {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+          console.log('test');
+          squareWidth = $('.hc-graphic-square').width();
+          $('.hc-graphic-square').css({'height': squareWidth + 'px'});
+      }, 250);
+    });
 });

@@ -20,10 +20,10 @@
         <header id="hc-header">
 
             <!-- hero image -->
-            <figure id="hc-hero" class="hc-container-img">
+            <!-- <figure id="hc-hero" class="hc-container-img">
                 <img src="http://www.mcclatchydc.com/news/v2zydn/picture116721638/binary/placeholder1.png"/>
                 <figcaption>Caption information goes here. (Photographer Name, Publication)</figcaption>
-            </figure>
+            </figure> -->
             <!-- /end hero image -->
 
             <!-- share icons -->
@@ -50,16 +50,38 @@
             <h1 class="hc-head">Headline lives here</h1>
             <h2 class="hc-deck">This is the story of a deckhead that will grow up to live on this story page</h2>
 
-            <a href="http://kristiwalker.com"><div class="hc-byline">By Firstname Lastname</div></a>
+            <!-- <a href="http://kristiwalker.com"><div class="hc-byline">By Firstname Lastname</div></a> -->
             <div class="hc-date">Month ##, Year 0:00 AM</div>
-
-            <button class="hc-sources-btn">View sources</button>
-            <button class="hc-sources-header"></button>
 
         </header>
         <!-- /end content header -->
         <!-- ██████████████████████████████████████████████ /END MM_LINK -->
 
+
+        <figure class="hc-graphic-wrapper">
+            <!-- <h4 class="graphic-head">Graphic headline goes here</h3>
+            <h5 class="graphic-deck">This is a fake deckhead that will grow up to be a real deckhead one day.</h5> -->
+            <div class="hc-graphic">
+                <div id="hc-col-no" class="hc-graphic-col">
+                    <div class="hc-col-head"><span class="hc-count">20</span><br /> lean no</div>
+                    <div class="hc-graphic-square-wrapper">
+                        <div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div>
+                    </div>
+                </div>
+                <div id="hc-col-unclear" class="hc-graphic-col">
+                    <div class="hc-col-head"><span class="hc-count">125</span><br /> unclear</div>
+                    <div class="hc-graphic-square-wrapper">
+                        <div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div>
+                    </div>
+                </div>
+                <div id="hc-col-yes" class="hc-graphic-col">
+                    <div class="hc-col-head"><span class="hc-count">136</span><br /> lean yes</div>
+                    <div class="hc-graphic-square-wrapper">
+                        <div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div>
+                    </div>
+                </div>
+            </div>
+        </figure>
 
         <!-- content well -->
             <!-- MM_LINK ███████████████████████████████████████████████████ -->

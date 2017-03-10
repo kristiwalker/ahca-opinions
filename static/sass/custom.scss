@@ -8,3 +8,142 @@
 // \_____|  \__,_| |___/  \__|  \___/  |_| |_| |_|   |___/  \__|  \__, | |_|  \___| |___/
 //                                                                 __/ |
 //                                                                |___/
+
+$lightest: #ccc;
+
+.hc-graphic-wrapper {
+    margin: 0 auto 8rem;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.graphic-head {
+    @extend .reset;
+    font-size: 2rem;
+    font-family: $sans;
+    font-weight: bold !important;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.6rem;
+    }
+}
+
+.graphic-deck {
+    @extend .reset;
+    font-size: 1.8rem;
+    font-family: $sans;
+    margin: inherit;
+    max-width: 1200px;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.6rem;
+    }
+}
+
+.hc-graphic {
+    height: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.hc-col-head {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: $sans;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+
+    span {
+        color: darken(red, 10%);
+        font-size: 2.5rem;
+    }
+}
+
+.hc-graphic-col {
+    display: inline-block;
+    float: left;
+    width: calc(100% / 3);
+    height: 100%;
+    overflow: auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 3rem;
+
+        &:not(:last-of-type) {
+            border-bottom: 0.5px solid $lightest;
+        }
+    }
+}
+
+#hc-col-no {
+    &:before {
+        width: calc(100% / 3);
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        left: 0;
+        border-right: 0.5px solid $lightest;
+
+        @media (max-width: 768px) {
+            border-right: none;
+        }
+    }
+}
+
+#hc-col-unclear {
+    &:before {
+        width: calc(100% / 3);
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        left: calc(0 + 33%);
+        border-right: 0.5px solid $lightest;
+
+        @media (max-width: 768px) {
+            border-right: none;
+        }
+    }
+}
+
+#hc-col-yes {
+    &:before {
+        width: calc(100% / 3);
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        right: 0;
+    }
+}
+
+.hc-graphic-square-wrapper {
+    margin: 0 auto;
+    width: 90%;
+    padding: 1.5rem 0.4rem;
+    display: block;
+    overflow: auto;
+
+    @media (max-width: 768px) {
+        padding-bottom: 0;
+    }
+}
+
+.hc-graphic-square {
+    width: calc(100% / 8 - 0.4rem);
+    background: $lightest;
+    display: inline-block;
+    float: left;
+    margin: 0.2rem;
+}
