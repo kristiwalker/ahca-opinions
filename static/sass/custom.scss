@@ -128,7 +128,8 @@ $lightest: #ccc;
     }
 }
 
-.hc-graphic-square-wrapper {
+.hc-square-wrapper {
+    position: relative;
     margin: 0 auto;
     width: 90%;
     padding: 1.5rem 0.4rem;
@@ -140,10 +141,48 @@ $lightest: #ccc;
     }
 }
 
-.hc-graphic-square {
+.hc-square {
     width: calc(100% / 8 - 0.4rem);
     background: $lightest;
     display: inline-block;
     float: left;
     margin: 0.2rem;
+}
+
+#hc-tooltip {
+    display: none;
+    height: auto;
+    width: 30%;
+    position: absolute;
+    background: white;
+    // border: 0.5px solid $lightest;
+    webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.32);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.32);
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.hc-display-tooltip {
+    display: block;
+}
+
+.hc-headshot {
+    height: 100px;
+    width: 100px;
+    background: $lightest;
+    margin: 2rem;
+    display: inline-block;
+    float: left;
+}
+
+.hc-tooltip-head {
+    margin-top: 2rem;
+}
+
+.hc-tooltip-details {
+    margin: 0 2rem 2rem;
 }

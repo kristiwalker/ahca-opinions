@@ -5,6 +5,8 @@
 <!-- custom head -->
 
     <link rel="stylesheet" type="text/css" href="static/css/custom.css">
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.js"></script> -->
+
 
     <!-- MM_LINK ███████████████████████████████████████████████████ -->
     <!-- <style>PASTE CUSTOM.CSS HERE</style> -->
@@ -61,24 +63,24 @@
         <figure class="hc-graphic-wrapper">
             <!-- <h4 class="graphic-head">Graphic headline goes here</h3>
             <h5 class="graphic-deck">This is a fake deckhead that will grow up to be a real deckhead one day.</h5> -->
+
             <div class="hc-graphic">
+                <div id="hc-tooltip">
+                    <div class="hc-headshot"></div>
+                    <h5 class="hc-tooltip-head">Firstname Lastname</h5>
+                    <div class="hc-tooltip-details">This is a description for the corresponding square. It should be no more than one to three sentences. This length is the ideal sentence length.</div>
+                </div>
                 <div id="hc-col-no" class="hc-graphic-col">
-                    <div class="hc-col-head"><span class="hc-count">20</span><br /> lean no</div>
-                    <div class="hc-graphic-square-wrapper">
-                        <div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div>
-                    </div>
+                    <div class="hc-col-head"><span id="hc-count-no" class="hc-count"></span><br /> leans no</div>
+                    <div id="square-no" class="hc-square-wrapper"></div>
                 </div>
                 <div id="hc-col-unclear" class="hc-graphic-col">
-                    <div class="hc-col-head"><span class="hc-count">125</span><br /> unclear</div>
-                    <div class="hc-graphic-square-wrapper">
-                        <div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div>
-                    </div>
+                    <div class="hc-col-head"><span id="hc-count-unclear" class="hc-count"></span><br /> unclear</div>
+                    <div id="square-unclear" class="hc-square-wrapper"></div>
                 </div>
                 <div id="hc-col-yes" class="hc-graphic-col">
-                    <div class="hc-col-head"><span class="hc-count">136</span><br /> lean yes</div>
-                    <div class="hc-graphic-square-wrapper">
-                        <div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div><div class="hc-graphic-square"></div>
-                    </div>
+                    <div class="hc-col-head"><span id="hc-count-yes" class="hc-count"></span><br /> leans yes</div>
+                    <div id="square-yes" class="hc-square-wrapper"></div>
                 </div>
             </div>
         </figure>
