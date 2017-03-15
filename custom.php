@@ -4,6 +4,7 @@
 
 <!-- custom head -->
 
+<link rel="stylesheet" type="text/css" href="static/css/custom.css">
     <link rel="stylesheet" type="text/css" href="static/css/custom.css">
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.js"></script> -->
 
@@ -65,11 +66,6 @@
             <h5 class="graphic-deck">This is a fake deckhead that will grow up to be a real deckhead one day.</h5> -->
 
             <div class="hc-graphic">
-                <!-- <div id="hc-tooltip">
-                    <div class="hc-headshot"></div>
-                    <h5 class="hc-tooltip-head">Firstname Lastname</h5>
-                    <div class="hc-tooltip-details">This is a description for the corresponding square. It should be no more than one to three sentences. This length is the ideal sentence length.</div>
-                </div> -->
                 <div id="hc-col-no" class="hc-graphic-col">
                     <div class="hc-col-head"><span id="hc-count-no" class="hc-count"></span><br /> leans no</div>
                     <div id="square-no" class="hc-square-wrapper"></div>
