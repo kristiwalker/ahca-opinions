@@ -29,17 +29,20 @@ $(document).ready(function() {
     // ITERATES THROUGH EACH JSON OBJECT
     ////////////////////////////////////////////////////
 
-    $.getJSON('https://d1at6jy1u029jl.cloudfront.net/data/1-wp6NwpIhMVUwoeUsKrH_JjnmriYFZV3WkbBuk2PWiE.json', function(data) {
+
+    $.getJSON('https://d1at6jy1u029jl.cloudfront.net/data/json/1-wp6NwpIhMVUwoeUsKrH_JjnmriYFZV3WkbBuk2PWiE.json', function(data) {
         // append square in columns, sorted by opinion
         $.each(data, function(k, v) {
 
             // tooltip html
-            var tooltip = "<div id='hc-tooltip'><div class='hc-headshot'></div><h5 class='hc-tooltip-head'>" + v.firstname + ' ' + v.lastname + "</h5><div class='hc-tooltip-details'>" + v.reason + "</div></div>";
+            var tooltip = "<div id='hc-tooltip'><div class='hc-headshot'></div><h5 class='hc-tooltip-head'>" + v.firstname + ' ' + v.lastname + ' - ' + v.statepostal + "</h5><div class='hc-tooltip-details'>" + v.reason + "</div></div>";
 
-            var photoURL = "url('https://theunitedstates.io/images/congress/original/" + v.id + ".jpg')";
+            var photoURL = "url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/" + v.id + ".jpg')";
+
+            var photoURLthumb = "url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/thumbs/" + v.id + ".jpg')";
 
             // squre and tooltip html in data attribute
-            var square = '<div id="' + v.id + '" class="hc-square" data-tooltip="' + tooltip + '" data-photo="' + photoURL + '"></div>';
+            var square = '<div id="' + v.id + '" class="hc-square" data-tooltip="' + tooltip + '" data-photo="' + photoURL + '" data-thumb="' + photoURLthumb + '"></div>';
 
             ////////////////////////////////////////////////////
             // SORTS AND DRAWS SQUARES INTO EACH COLUMN
@@ -62,7 +65,7 @@ $(document).ready(function() {
 
                 // if square ID matches ID in JSON, add photo URL to css background-image property
                 if (v.id === squareId) {
-                    var dataPhoto = $(this).data('photo');
+                    var dataPhoto = $(this).data('thumb');
                     $('#' + squareId).css('background-image', dataPhoto);
                 }
             });
@@ -103,61 +106,48 @@ $(document).ready(function() {
     }
 
     ////////////////////////////////////////////////////
-    // APENDS AND REMOVES TOOLTIPS ON HOVER/TAP
+    // APENDS AND REMOVES TOOLTIPS ON HOVER/TAP,
+    // POSITIONS TOOLTIPS
     ////////////////////////////////////////////////////
-
 
     function showTooltip() {
-        $('.hc-square').mouseover(function() {
+        $('.hc-square').mouseover(function(event) {
             var dataTooltip = $(this).data('tooltip');
-            var parentDiv = $(this).closest('div');
-            $(parentDiv).append(dataTooltip);
 
-            positionTooltip();
+            $(this).append(dataTooltip);
 
+            // Adds photo URL to headshot background-image
             var dataPhoto = $(this).data('photo');
             $('.hc-headshot').css('background-image', dataPhoto);
+
+            // Positions tooltips in relation to corresponding square
+            var w = $(window).width();
+            var tooltipHeight = $('#hc-tooltip').outerHeight();
+            var tooltipWidth = $('#hc-tooltip').outerWidth();
+
+            var squarePos = $(this).position();
+            var xPos = 0;
+            var yPos = 0;
+
+            if (event.pageX > w / 2.1) {
+                // positions tooltip to the left
+                xPos = squarePos.left - tooltipWidth + 10 + "px";
+            } else {
+                // positions tooltip to the right
+                xPos = squarePos.left + 35 + "px";
+            }
+            yPos = squarePos.top - tooltipHeight + 15 + "px";
+
+            $('#hc-tooltip').css({
+                left: xPos,
+                top: yPos
+            });
+
         });
 
-        $('.hc-square').mouseout(function() {
+        $('.hc-square').mouseout(function(event) {
             var dataTooltip = $(this).data('tooltip');
             $('#hc-tooltip').remove();
-        });
-    }
-
-    ////////////////////////////////////////////////////
-    // POSITIONS TOOLTIPS IN RELATION TO CORRESPONDING SQUARE
-    ////////////////////////////////////////////////////
-
-    // use the pageX position in relation to the window width to position the tooltip to the left or right of the point hovered over.
-
-    function positionTooltip() {
-        var selectTooltip = document.getElementById('hc-tooltip');
-        var tooltipWidth = $('#hc-tooltip').outerWidth();
-        var tooltipHeight = $('#hc-tooltip').outerHeight();
-        console.log(event.pageX, "moouse X");
-        console.log(event.clientY, "moouse Y");
-        var w = $(window).width();
-        var xPos = 0 + "px";
-        if (event.pageX > w / 2.1) {
-            // positions tooltip to the left
-            xPos = event.pageX - (tooltipWidth + 70) + "px";
-        } else {
-            // positions tooltip to the right
-            xPos = event.pageX - 20 + "px";
-        }
-
-        var yPos = event.pageY - tooltipHeight - 750 + "px";
-
-        // if (w < 768) {
-        //     yPos = event.clientY + tooltipHeight + 40 + "px";
-        // }
-        // console.log(event.clientY);
-
-        // var leftPos = "left"
-        $('#hc-tooltip').css({
-            left: xPos,
-            top: yPos
         });
     }
 });

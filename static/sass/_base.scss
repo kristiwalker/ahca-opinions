@@ -47,12 +47,16 @@ section.container {
     font-family: $slab;
     font-weight: normal;
     font-style: normal;
-    font-size: 8rem;
-    line-height: 9.6rem;
+    font-size: 7rem;
+    line-height: 8.6rem;
     color: black;
+    // @media (max-width: 1450px) {
+    //     font-size: 6rem;
+    //     line-height: 7.6rem;
+    // }
     @media (max-width: 480px) {
-        font-size: 7rem;
-        line-height: 8.4rem;
+        font-size: 4rem;
+        line-height: 5.6rem;
     }
 }
 
@@ -63,12 +67,17 @@ section.container {
     font-family: $slab;
     font-weight: normal;
     font-style: normal;
-    font-size: 4rem;
-    line-height: 6rem;
+    font-size: 2.5rem;
+    line-height: 4rem;
     color: black;
+    max-width: 750px;
+    // @media (max-width: 1450px) {
+    //     font-size: 2rem;
+    //     line-height: 3rem;
+    // }
     @media (max-width: 480px) {
-        font-size: 3rem;
-        line-height: 4.8rem;
+        font-size: 2rem;
+        line-height: 3rem;
     }
 }
 
@@ -198,9 +207,9 @@ p {
 
 .hc-dropcap {
     float: left;
-    font-size: 17rem;
-    line-height: 18rem;
-    margin: 0 0.5rem -8rem 0;
+    font-size: 13rem;
+    line-height: 14rem;
+    margin: 0 0.5rem -4rem 0;
     padding-top: 0;
     font-family: $slab;
     @media (max-width: 480px) {
@@ -492,11 +501,17 @@ XII. Credits
 */
 
 .hc-credits {
+    @media (min-width: 1024px) {
+        max-width: 650px;
+        font-size: 1.4rem;
+    }
+
     max-width: 650px;
     @extend .hc-header-style;
     margin: 0 auto 4.8rem;
     font-size: 1.2rem;
     padding-top: 1.2rem;
+    text-align: left;
     @media (max-width: 480px) {
         margin: 1.2 auto 4.8rem;
     }
