@@ -1,4 +1,4 @@
-.reset, .hc-head, .hc-deck, .hc-byline, .hc-date, .hc-section-head, .hc-subhead, .hc-quote, .hc-attribution, .hc-note, .hc-refer-head, .hc-refer-deck, .graphic-head, .graphic-deck {
+.reset, .hc-head, .hc-deck, .hc-byline, .hc-date, .hc-section-head, .hc-subhead, .hc-quote, .hc-attribution, .hc-note, .hc-refer-head, .hc-refer-deck, .hc-graphic-head, .hc-graphic-deck {
   margin: 0;
   padding: 0;
   border: 0;
@@ -543,7 +543,7 @@ section.container {
   @media (max-width: 480px) {
     .hc-head {
       font-size: 4rem;
-      line-height: 5.6rem; } }
+      line-height: 4.6rem; } }
 
 .hc-deck {
   margin: 0 auto 2.4rem;
@@ -557,7 +557,7 @@ section.container {
   @media (max-width: 480px) {
     .hc-deck {
       font-size: 2rem;
-      line-height: 3rem; } }
+      line-height: 2.5rem; } }
 
 .hc-byline {
   margin: 0 auto 0.6rem;
@@ -622,11 +622,11 @@ p, [id*="content-body-"] p {
   font-family: "Lyon", Georgia, serif;
   font-size: 2rem;
   margin-bottom: 2.4rem;
-  line-height: 3.6rem; }
+  line-height: 3rem; }
   @media (max-width: 768px) {
     p, [id*="content-body-"] p {
       font-size: 2rem;
-      line-height: 3.6rem; } }
+      line-height: 2.8rem; } }
 
 [id*="content-body-"] ul {
   margin: auto; }
@@ -647,11 +647,11 @@ p, [id*="content-body-"] p {
   font-family: "Lyon", Georgia, serif;
   font-size: 2rem;
   margin-bottom: 2.4rem;
-  line-height: 3.6rem; }
+  line-height: 3rem; }
   @media (max-width: 768px) {
     p, [id*="content-body-"] p {
       font-size: 2rem;
-      line-height: 3.6rem; } }
+      line-height: 2.8rem; } }
 
 .hc-dropcap {
   float: left;
@@ -1166,24 +1166,26 @@ XV. Loader
   max-width: 1200px;
   width: 90%; }
 
-.graphic-head {
+.hc-graphic-head {
   font-size: 2rem;
   font-family: "McClatchy Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold !important;
   margin-bottom: 1rem; }
-  @media (max-width: 768px) {
-    .graphic-head {
-      font-size: 1.6rem; } }
 
-.graphic-deck {
-  font-size: 1.8rem;
+.hc-graphic-deck {
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "McClatchy Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin: inherit;
   max-width: 1200px;
+  margin-top: 0;
   margin-bottom: 4rem; }
-  @media (max-width: 768px) {
-    .graphic-deck {
-      font-size: 1.6rem; } }
+
+.hc-graphic-credit {
+  font-weight: bold;
+  font-size: 1.3rem;
+  width: 100%;
+  text-align: right; }
 
 .hc-graphic {
   height: auto;
@@ -1274,7 +1276,10 @@ XV. Loader
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ccc; }
+  opacity: 0.3; }
+  .hc-square:hover {
+    filter: grayscale(0%);
+    opacity: 1; }
 
 #hc-tooltip {
   height: auto;
@@ -1318,31 +1323,74 @@ XV. Loader
   margin: 0 2rem 2rem;
   line-height: 1.6rem; }
 
-#J000289 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/J000289.jpg"); }
-
-#C001053 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/C001053.jpg"); }
-
-#R000583 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/R000583.jpg"); }
-
-#R000582 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/R000582.jpg"); }
-
-#J000290 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/J000290.jpg"); }
-
-#J000299 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/J000299.jpg") !important; }
-
-#T000478 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/T000478.jpg"); }
-
-#L000587 {
-  background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/L000587.jpg"); }
-
 #R000607 {
   background-image: url("http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/R000607.jpg"); }
+
+/*
+-------------------------------------------
+Dropdown
+-------------------------------------------
+*/
+[id*="content-body-"] ul {
+  margin-left: 0; }
+
+.hc-dropdown {
+  z-index: 90000;
+  width: 300px;
+  position: relative;
+  margin-bottom: 2rem; }
+
+.hc-drophead {
+  transition: all 0.5s ease;
+  cursor: pointer;
+  background: #777;
+  -moz-box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset;
+  -webkit-box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset;
+  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset;
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  font-size: 1.7rem;
+  text-align: left;
+  color: white; }
+  .hc-drophead:hover {
+    background: #5e5e5e; }
+  .hc-drophead:after {
+    position: absolute;
+    display: block;
+    content: '\25BC';
+    font-size: 0.7em;
+    top: 16px;
+    color: white;
+    right: 25px; }
+
+.hc-dropmenu {
+  display: none;
+  width: 100%;
+  max-width: 300px;
+  max-height: 9999px;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "McClatchy Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom: none; }
+  .hc-dropmenu li {
+    font-family: "McClatchy Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 10px 8px;
+    cursor: pointer;
+    transition: all 0.5s ease; }
+    .hc-dropmenu li:hover {
+      background: #e6e6e6; }
+    .hc-dropmenu li a {
+      color: #777;
+      font-size: 1.7rem;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%; }
 
 /*# sourceMappingURL=custom.css.map */

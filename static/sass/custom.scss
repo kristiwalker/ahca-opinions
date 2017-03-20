@@ -23,29 +23,30 @@ $lightest: #ccc;
     width: 90%;
 }
 
-.graphic-head {
+.hc-graphic-head {
     @extend .reset;
     font-size: 2rem;
     font-family: $sans;
     font-weight: bold !important;
     margin-bottom: 1rem;
-
-    @media (max-width: 768px) {
-        font-size: 1.6rem;
-    }
 }
 
-.graphic-deck {
+.hc-graphic-deck {
     @extend .reset;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-family: $sans;
     margin: inherit;
     max-width: 1200px;
+    margin-top: 0;
     margin-bottom: 4rem;
+}
 
-    @media (max-width: 768px) {
-        font-size: 1.6rem;
-    }
+.hc-graphic-credit {
+    font-weight: bold;
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: right;
 }
 
 .hc-graphic {
@@ -161,8 +162,13 @@ $lightest: #ccc;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #ccc;
-    // background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/silhouette.jpg');
+    // filter: grayscale(100%);
+    opacity: 0.3;
+
+    &:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
 }
 
 #hc-tooltip {
@@ -216,30 +222,91 @@ $lightest: #ccc;
 }
 
 // custom background images for missing HOR members
-#J000289 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/J000289.jpg');
-}
-#C001053 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/C001053.jpg');
-}
-#R000583 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/R000583.jpg');
-}
-#R000582 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/R000582.jpg');
-}
-#J000290 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/J000290.jpg');
-}
-#J000299 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/J000299.jpg') !important;
-}
-#T000478 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/T000478.jpg');
-}
-#L000587 {
-    background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/L000587.jpg');
-}
+
 #R000607 {
     background-image: url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/R000607.jpg');
+}
+
+/*
+-------------------------------------------
+Dropdown
+-------------------------------------------
+*/
+
+[id*="content-body-"] ul {
+    margin-left: 0;
+}
+
+.hc-dropdown {
+    z-index: 90000;
+    width: 300px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hc-drophead {
+    transition: all 0.5s ease;
+    cursor: pointer;
+    background: #777;
+    -moz-box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset;
+    -webkit-box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset;
+    box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    // width: 100%;
+    // padding-left: 28px;
+    font-size: 1.7rem;
+    text-align: left;
+    color: white;
+
+    &:hover {
+        background: darken(#777, 10%);
+    }
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '\25BC';
+        font-size: 0.7em;
+        top: 16px;
+        color: white;
+        right: 25px;
+    }
+}
+
+.hc-dropmenu {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    max-height: 9999px;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: $sans;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: none;
+
+    li {
+        font-family: $sans;
+        background: white;
+        border-bottom: 1px solid #ccc;
+        padding: 12px 10px 8px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background: lighten(#ccc, 10%);
+        }
+
+        a {
+            color: #777;
+            font-size: 1.7rem;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
