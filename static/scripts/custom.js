@@ -13,6 +13,10 @@ $(document).ready(function() {
     // SET SQUARE HEIGHT EQUAL TO WIDTH ON WINDOW RESIZE
     ////////////////////////////////////////////////////
 
+    var embed = '<link rel="stylesheet" type="text/css" href="http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/css/custom.css"/> <section id="content-body-well"> <figure class="hc-graphic-wrapper" style="margin-top: 0rem; margin-bottom: 6rem;"> <h4 class="hc-graphic-head"></h4> <h5 class="hc-graphic-deck"></h5> <div class="hc-graphic"> <div id="hc-col-no" class="hc-graphic-col" style="margin-bottom: 2rem;"> <div class="hc-col-head"><span id="hc-count-no" class="hc-count"></span><br/> lean no</div><div id="square-no" class="hc-square-wrapper"></div></div><div id="hc-col-unclear" class="hc-graphic-col" style="margin-bottom: 2rem;"> <div class="hc-col-head"><span id="hc-count-unclear" class="hc-count"></span><br/> unclear</div><div id="square-unclear" class="hc-square-wrapper"></div></div><div id="hc-col-yes" class="hc-graphic-col" style="margin-bottom: 2rem;"> <div class="hc-col-head"><span id="hc-count-yes" class="hc-count"></span><br/> lean yes</div><div id="square-yes" class="hc-square-wrapper" >&nbsp;</div></div></div><div class="hc-graphic-credit">Graphic by <a href="mailto:adaugherty@mcclatchydc.com">Alex Daugherty</a>, <a href="mailto:kwalker@mcclatchy.com">Kristi Walker</a>, <a href="mailto:glinch@mcclatchy.com">Greg Linch</a> and <a href="mailto:jmagness@mcclatchydc.com">Josh Magness</a> (McClatchy)</div></figure> </section>';
+
+    $('#hc-graphic-embed').append(embed);
+
     var resizeTimer;
     var locationFilter = [];
     var uniqStates = [];
