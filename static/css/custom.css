@@ -1215,7 +1215,7 @@ XV. Loader
   @media (max-width: 768px) {
     .hc-graphic-col {
       width: 100%;
-      padding: 3rem;
+      padding: 3rem 0 3rem;
       margin-bottom: 0; }
       .hc-graphic-col:not(:last-of-type) {
         border-bottom: 0.5px solid #ccc; }
@@ -1275,11 +1275,29 @@ XV. Loader
   margin: 0.2rem;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.3; }
+  background-size: cover; }
   .hc-square:hover {
-    filter: grayscale(0%);
-    opacity: 1; }
+    -webkit-animation: aia2 5s linear infinite alternate;
+    -moz-animation: aia2 5s linear infinite alternate;
+    -ms-animation: aia2 5s linear infinite alternate;
+    -o-animation: aia2 5s linear infinite alternate;
+    animation: aia2 5s linear infinite alternate;
+    /* this comes last */ }
+  @media (max-width: 1200px) {
+    .hc-square {
+      width: calc(100% / 7 - 0.4rem); } }
+  @media (max-width: 1000px) {
+    .hc-square {
+      width: calc(100% / 6 - 0.4rem); } }
+  @media (max-width: 768px) {
+    .hc-square {
+      width: calc(100% / 10 - 0.4rem); } }
+  @media (max-width: 650px) {
+    .hc-square {
+      width: calc(100% / 9 - 0.4rem); } }
+  @media (max-width: 525px) {
+    .hc-square {
+      width: calc(100% / 7 - 0.4rem); } }
 
 #hc-tooltip {
   height: auto;

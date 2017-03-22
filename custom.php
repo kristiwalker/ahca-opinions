@@ -38,14 +38,6 @@
         </header>
 
         <figure class="hc-graphic-wrapper">
-            <div class="hc-dropdown">
-                <div class="hc-drophead">Choose a superbowl ad</div>
-                <ul class="hc-dropmenu">
-                    <script id="filters-template" type="text/x-handlebars-template">
-                        <li>{{statepostal}}</li>
-                    </script>
-                </ul>
-            </div>
 
             <div class="hc-graphic">
                 <div id="hc-col-no" class="hc-graphic-col">
@@ -135,6 +127,6 @@
 <!-- custom scripts -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
-    <script type="text/javascript" src="static/scripts/custom.js"></script>
-    <!-- <script type="text/javascript" src="http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/scripts/custom.js"></script> -->
+    <!-- <script type="text/javascript" src="static/scripts/custom.js"></script> -->
+    <script type="text/javascript" src="http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/scripts/custom.js"></script>
 <!-- /end custom scripts -->

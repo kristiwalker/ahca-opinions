@@ -13,67 +13,7 @@ $(document).ready(function() {
     // SET SQUARE HEIGHT EQUAL TO WIDTH ON WINDOW RESIZE
     ////////////////////////////////////////////////////
 
-    var embed = '<link rel="stylesheet" type="text/css" href="http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/css/custom.css"/> <section id="content-body-well"> <figure class="hc-graphic-wrapper" style="margin-top: 0rem; margin-bottom: 6rem;"> <h4 class="hc-graphic-head"></h4> <h5 class="hc-graphic-deck"></h5> <div class="hc-graphic"> <div id="hc-col-no" class="hc-graphic-col" style="margin-bottom: 2rem;"> <div class="hc-col-head"><span id="hc-count-no" class="hc-count"></span><br/> lean no</div><div id="square-no" class="hc-square-wrapper"></div></div><div id="hc-col-unclear" class="hc-graphic-col" style="margin-bottom: 2rem;"> <div class="hc-col-head"><span id="hc-count-unclear" class="hc-count"></span><br/> unclear</div><div id="square-unclear" class="hc-square-wrapper"></div></div><div id="hc-col-yes" class="hc-graphic-col" style="margin-bottom: 2rem;"> <div class="hc-col-head"><span id="hc-count-yes" class="hc-count"></span><br/> lean yes</div><div id="square-yes" class="hc-square-wrapper" >&nbsp;</div></div></div><div class="hc-graphic-credit">Graphic by <a href="mailto:adaugherty@mcclatchydc.com">Alex Daugherty</a>, <a href="mailto:kwalker@mcclatchy.com">Kristi Walker</a>, <a href="mailto:glinch@mcclatchy.com">Greg Linch</a> and <a href="mailto:jmagness@mcclatchydc.com">Josh Magness</a> (McClatchy)</div></figure> </section>';
-
-    $('#hc-graphic-embed').append(embed);
-
     var resizeTimer;
-    var locationFilter = [];
-    var uniqStates = [];
-    var filtersTemplate = Handlebars.compile($("#filters-template").html());
-
-    var stateName = {
-        "AK": "Alaska",
-        "AZ": "Arizona",
-        "AR": "Arkansas",
-        "CA": "California",
-        "CO": "Colorado",
-        "CT": "Connecticut",
-        "DE": "Delaware",
-        "DC": "District of Columbia",
-        "FL": "Florida",
-        "GA": "Georgia",
-        "HI": "Hawaii",
-        "ID": "Idaho",
-        "IL": "Illinois",
-        "IN": "Indiana",
-        "IA": "Iowa",
-        "KS": "Kansas",
-        "KY": "Kentucky",
-        "LA": "Louisiana",
-        "ME": "Maine",
-        "MD": "Maryland",
-        "MA": "Massachusetts",
-        "MI": "Michigan",
-        "MN": "Minnesota",
-        "MS": "Mississippi",
-        "MO": "Missouri",
-        "MT": "Montana",
-        "NE": "Nebraska",
-        "NV": "Nevada",
-        "NH": "New Hampshire",
-        "NJ": "New Jersey",
-        "NM": "New Mexico",
-        "NY": "New York",
-        "NC": "North Carolina",
-        "ND": "North Dakota",
-        "OH": "Ohio",
-        "OK": "Oklahoma",
-        "OR": "Oregon",
-        "PA": "Pennsylvania",
-        "RI": "Rhode Island",
-        "SC": "South Carolina",
-        "SD": "South Dakota",
-        "TN": "Tennessee",
-        "TX": "Texas",
-        "UT": "Utah",
-        "VT": "Vermont",
-        "VA": "Virginia",
-        "WA": "Washington",
-        "WV": "West Virginia",
-        "WI": "Wisconsin",
-        "WY": "Wyoming"
-    };
 
     $(window).on('resize', function(e) {
         clearTimeout(resizeTimer);
@@ -85,83 +25,8 @@ $(document).ready(function() {
         }, 250);
     });
 
-
-    $('.hc-dropdown').click(function() {
-        $('.hc-dropmenu').slideToggle();
-    });
-
-
     ////////////////////////////////////////////////////
-    // ITERATES THROUGH EACH JSON OBJECT
-    ////////////////////////////////////////////////////
-
-
-    $.getJSON('https://d1at6jy1u029jl.cloudfront.net/data/json/1-wp6NwpIhMVUwoeUsKrH_JjnmriYFZV3WkbBuk2PWiE.json', function(data) {
-        // append square in columns, sorted by opinion
-
-        uniqStates = _.uniqBy(data, function(profile) {
-            return profile.statepostal;
-        });
-
-        console.log(uniqStates);
-
-        writeFilters();
-
-        function writeFilters() {
-            $.each(uniqStates, function(k, v) {
-
-                var filtersContent = filtersTemplate(v);
-                $(".hc-dropmenu").append(filtersContent);
-            });
-        }
-
-        $.each(data, function(k, v) {
-
-            // tooltip html
-            var tooltip = "<div id='hc-tooltip'><div class='hc-headshot'></div><h5 class='hc-tooltip-head'>" + v.firstname + ' ' + v.lastname + ' - ' + v.statepostal + "</h5><div class='hc-tooltip-details'>" + v.reason + "</div></div>";
-
-            var photoURL = "url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/" + v.id + ".jpg')";
-
-            var photoURLthumb = "url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/thumbs/" + v.id + ".jpg')";
-
-            // squre and tooltip html in data attribute
-            var square = '<div id="' + v.id + '" class="hc-square" data-tooltip="' + tooltip + '" data-photo="' + photoURL + '" data-thumb="' + photoURLthumb + '"></div>';
-
-            ////////////////////////////////////////////////////
-            // SORTS AND DRAWS SQUARES INTO EACH COLUMN
-            ////////////////////////////////////////////////////
-
-            if (v.opinion === 'Leans no') {
-                $('#square-no').append(square);
-            } else if (v.opinion === 'Unclear') {
-                $('#square-unclear').append(square);
-            } else if (v.opinion === 'Leans yes') {
-                $('#square-yes').append(square);
-            }
-
-            ////////////////////////////////////////////////////
-            // ADD PHOTO FROM URL AS SQUARE BACKGROUND IMAGE
-            ////////////////////////////////////////////////////
-
-            $('.hc-square').each(function() {
-                var squareId = $(this).attr('id');
-
-                // if square ID matches ID in JSON, add photo URL to css background-image property
-                if (v.id === squareId) {
-                    var dataPhoto = $(this).data('thumb');
-                    $('#' + squareId).css('background-image', dataPhoto);
-                }
-            });
-
-            setHeight();
-        });
-
-        showTooltip();
-        countSquares();
-    });
-
-    ////////////////////////////////////////////////////
-    // SETS SQUARE HEIGHT EQUAL TO RELATIVE WITH
+    // SETS SQUARE HEIGHT EQUAL TO RELATIVE WIDTH
     ////////////////////////////////////////////////////
 
     function setHeight() {
@@ -187,6 +52,22 @@ $(document).ready(function() {
         $('#hc-count-unclear').text(countUnclear);
         $('#hc-count-yes').text(countYes);
     }
+
+    ////////////////////////////////////////////////////
+    // ADDS AND ENCODES TEXT
+    ////////////////////////////////////////////////////
+
+    // Adds head and deck
+    var head = "Paul Ryan's Obamacare replacement bill vote forecast";
+    $('.hc-graphic-head').text(head);
+
+    var deck = 'McClatchy surveyed House Republicans and interpreted public statements to see where they stand. If just 21 vote no, the bill fails.';
+    $('.hc-graphic-deck').text(deck);
+
+    // Removes &nbdsp; that Newsgate draws
+    $('.hc-square-wrapper').html(function(i,h){
+        return h.replace(/&nbsp;/g,'');
+    });
 
     ////////////////////////////////////////////////////
     // APENDS AND REMOVES TOOLTIPS ON HOVER/TAP,
@@ -241,12 +122,55 @@ $(document).ready(function() {
         });
     }
 
-    // encodes quotemarks for reasons
-    $('.hc-square-wrapper').html(function(i, h) {
-        return h.replace(/&nbsp;/g, '');
-    });
 
     ////////////////////////////////////////////////////
-    // DROPDOWN
+    // ITERATES THROUGH EACH JSON OBJECT
     ////////////////////////////////////////////////////
+
+    $.getJSON('https://d1at6jy1u029jl.cloudfront.net/data/json/1-wp6NwpIhMVUwoeUsKrH_JjnmriYFZV3WkbBuk2PWiE.json', function(data) {
+        // append square in columns, sorted by opinion
+        $.each(data, function(k, v) {
+
+            // tooltip html
+            var tooltip = "<div id='hc-tooltip'><div class='hc-headshot'></div><h5 class='hc-tooltip-head'>" + v.firstname + ' ' + v.lastname + ' - ' + v.statepostal + "</h5><div class='hc-tooltip-details'>" + v.reason + "</div></div>";
+
+            var photoURL = "url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/" + v.id + ".jpg')";
+
+            var photoURLthumb = "url('http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/images/thumbs/" + v.id + ".jpg')";
+
+            // squre and tooltip html in data attribute
+            var square = '<div id="' + v.id + '" class="hc-square" data-tooltip="' + tooltip + '" data-photo="' + photoURL + '" data-thumb="' + photoURLthumb + '"></div>';
+
+            ////////////////////////////////////////////////////
+            // SORTS AND DRAWS SQUARES INTO EACH COLUMN
+            ////////////////////////////////////////////////////
+
+            if (v.opinion === 'Leans no') {
+                $('#square-no').append(square);
+            } else if (v.opinion === 'Unclear') {
+                $('#square-unclear').append(square);
+            } else if (v.opinion === 'Leans yes') {
+                $('#square-yes').append(square);
+            }
+
+            ////////////////////////////////////////////////////
+            // ADD PHOTO FROM URL AS SQUARE BACKGROUND IMAGE
+            ////////////////////////////////////////////////////
+
+            $('.hc-square').each(function() {
+                var squareId = $(this).attr('id');
+
+                // if square ID matches ID in JSON, add photo URL to css background-image property
+                if (v.id === squareId) {
+                    var dataPhoto = $(this).data('thumb');
+                    $('#' + squareId).css('background-image', dataPhoto);
+                }
+            });
+
+            setHeight();
+        });
+
+        showTooltip();
+        countSquares();
+    });
 });
