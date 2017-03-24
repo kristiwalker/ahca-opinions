@@ -127,6 +127,6 @@
 <!-- custom scripts -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
-    <!-- <script type="text/javascript" src="static/scripts/custom.js"></script> -->
-    <script type="text/javascript" src="http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/scripts/custom.js"></script>
+    <script type="text/javascript" src="static/scripts/custom.js"></script>
+    <!-- <script type="text/javascript" src="http://media.mcclatchydc.com/static/graphics/20170314-AHCARepublicanOpinions/static/scripts/custom.js"></script> -->
 <!-- /end custom scripts -->

@@ -129,6 +129,23 @@ $(document).ready(function() {
 
     $.getJSON('https://d1at6jy1u029jl.cloudfront.net/data/json/1-wp6NwpIhMVUwoeUsKrH_JjnmriYFZV3WkbBuk2PWiE.json', function(data) {
         // append square in columns, sorted by opinion
+
+
+        // _.sortBy(data, function(k, v) {
+        //     return new Date(v.updated);
+        // });
+
+        // var orderDates = _.sortBy(data, [function(v) {
+        //     return v.updated;
+        // }]);
+
+        var orderDates = _.orderBy(data, ['updated'], ['desc']);
+
+
+        console.log(orderDates);
+
+
+
         $.each(data, function(k, v) {
 
             // tooltip html
