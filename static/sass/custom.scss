@@ -75,7 +75,7 @@ $lightest: #ccc;
     display: inline-block;
     float: left;
     width: calc(100% / 3);
-    height: 100%;
+    height: auto;
     overflow: auto;
     margin-bottom: 6rem;
 
@@ -229,6 +229,7 @@ $lightest: #ccc;
 .hc-tooltip-head {
     margin: 2rem 2rem 1rem;
     font-weight: bold;
+    font-size: 2rem;
 
     @media (max-width: 768px) {
         display: block;
@@ -237,7 +238,7 @@ $lightest: #ccc;
 }
 
 .hc-tooltip-details {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 0 2rem 2rem;
     line-height: 1.6rem;
 }

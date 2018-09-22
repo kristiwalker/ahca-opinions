@@ -31,6 +31,14 @@ I. Content header
 -------------------------------------------
 */
 
+html {
+  font-size: 10px;
+}
+
+a {
+  color: #cc0000;
+}
+
 section.container {
     min-width: 100%;
     padding: 0;
@@ -48,12 +56,9 @@ section.container {
     font-weight: normal;
     font-style: normal;
     font-size: 7rem;
-    line-height: 8.6rem;
+    line-height: 8rem;
     color: black;
-    // @media (max-width: 1450px) {
-    //     font-size: 6rem;
-    //     line-height: 7.6rem;
-    // }
+
     @media (max-width: 480px) {
         font-size: 4rem;
         line-height: 4.6rem;
@@ -66,15 +71,12 @@ section.container {
     margin: 0 auto 2.4rem;
     font-family: $slab;
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
     font-size: 2.5rem;
-    line-height: 4rem;
+    line-height: 3.5rem;
     color: black;
     max-width: 750px;
-    // @media (max-width: 1450px) {
-    //     font-size: 2rem;
-    //     line-height: 3rem;
-    // }
+
     @media (max-width: 480px) {
         font-size: 2rem;
         line-height: 2.5rem;
